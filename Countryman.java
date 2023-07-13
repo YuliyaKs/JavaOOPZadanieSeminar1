@@ -15,11 +15,6 @@ public class Countryman extends AbsoluteHero{
         this.tool = Countryman.r.nextInt(0, 100);
     }
 
-    public String getInfo() {
-        return String.format("%s  MusclePower: %d  Tool: %d", 
-            super.getInfo(), this.musclePower, this.tool);
-    }
-
     // Метод земледелие
     public void agronomy(int hour) {
         super.money += hour * 100;
@@ -28,4 +23,12 @@ public class Countryman extends AbsoluteHero{
         this.musclePower -= hour * 10;
         this.tool -= hour * 5;
     }
+
+    @Override
+    public String getInfo() {
+        return "Countryman";
+    }
+
+    @Override
+    public void step(){}
 }

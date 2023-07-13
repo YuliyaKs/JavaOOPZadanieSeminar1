@@ -1,25 +1,79 @@
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Add {
     public static void main(String[] args) {
 
         Arbalester arbalester = new Arbalester(); // арбалетчик
-        System.out.println(arbalester.getInfo()); 
-
         Bandit bandit = new Bandit(); // разбойник
-        System.out.println(bandit.getInfo());
-
         Countryman countryman = new Countryman(); // крестьянин
-        System.out.println(countryman.getInfo());
-
         Killer killer = new Killer(); // снайпер
-        System.out.println(killer.getInfo());
-
         Mage mage = new Mage(); // колдун
-        System.out.println(mage.getInfo());
-
         Monastic monastic = new Monastic(); // монах
-        System.out.println(monastic.getInfo());
-
         Pikeman pikeman = new Pikeman(); // копейщик
-        System.out.println(pikeman.getInfo());
+        
+        ArrayList<AbsoluteHero> armyLightForces = new ArrayList<>();
+        fillArmyLF(armyLightForces);
+        for (AbsoluteHero absoluteHero : armyLightForces) {
+            System.out.println(absoluteHero.getInfo());
+        }
+
+        System.out.println();
+        
+        ArrayList<AbsoluteHero> armyDarkForces = new ArrayList<>();
+        fillArmyDF(armyDarkForces);
+        for (AbsoluteHero absoluteHero : armyDarkForces) {
+            System.out.println(absoluteHero.getInfo());
+        }
+    }
+    public static void fillArmyLF (ArrayList<AbsoluteHero> ArrList) {
+        for (int i = 0; i < 10; i++) {
+            int count = new Random().nextInt(0, 4);
+            switch (count) {
+                case 0: {
+                    ArrList.add(new Countryman());
+                    break;                    
+                }
+                case 1: {
+                    ArrList.add(new Arbalester());
+                    break;                    
+                }
+                case 2: {
+                    ArrList.add(new Monastic());
+                    break;
+                }
+                case 3: {
+                    ArrList.add(new Pikeman());
+                    break;
+                }
+
+            }               
+        }
+    }
+
+    public static void fillArmyDF (ArrayList<AbsoluteHero> ArrList) {
+        for (int i = 0; i < 10; i++) {
+            int count = new Random().nextInt(0, 4);
+            switch (count) {
+                case 0: {
+                    ArrList.add(new Countryman());
+                    break;                    
+                }
+                case 1: {
+                    ArrList.add(new Bandit());
+                    break;                    
+                }
+                case 2: {
+                    ArrList.add(new Killer());
+                    break;
+                }
+                case 3: {
+                    ArrList.add(new Mage());
+                    break;
+                }
+
+            }               
+        }
     }
 }
+

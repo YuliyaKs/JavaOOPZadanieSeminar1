@@ -12,15 +12,18 @@ public class Arbalester extends Shooter{
         this.dart = Arbalester.r.nextInt(0, 100);
     }
 
-    public String getInfo() {
-        return String.format("%s  Accuracy: %d  Dart: %d", 
-            super.getInfo(), super.accuracy, this.dart);
-    }
-
     // Метод война
     public void war(int hour) {
         super.war(hour);
         this.dart -= hour * 5;
     }
+
+    @Override
+    public String getInfo() {
+        return "Arbalester";
+    }
+
+    @Override
+    public void step(){}
 }
 

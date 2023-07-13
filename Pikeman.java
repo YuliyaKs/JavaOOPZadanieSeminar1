@@ -12,12 +12,7 @@ public class Pikeman extends Soldier {
         this.pike = Pikeman.r.nextInt(0, 100);
     }
 
-    public String getInfo() {
-        return String.format("%s  Speed: %d  Pike: %d", 
-            super.getInfo(), super.speed, this.pike);
-    }
-    
-    // Метод война
+      // Метод война
     public void war(int hour) {
         super.money += hour * 100;
         super.hunger += hour * 10;
@@ -25,4 +20,12 @@ public class Pikeman extends Soldier {
         super.speed -= hour * 10;
         this.pike -= hour * 5;
     }
+
+    @Override
+    public String getInfo() {
+        return "Pikeman";
+    }
+
+    @Override
+    public void step(){}
 }

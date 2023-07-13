@@ -14,11 +14,6 @@ public class Mage extends Psychic{
         this.elixir = Mage.r.nextInt(0, 100);
     }
 
-    public String getInfo() {
-        return String.format("%s  Mana: %d  Elixir: %d  Medicament: %d", 
-            super.getInfo(), super.mana, this.elixir, this.medicament);
-    }
-
     // Метод обряды
     public void ceremony(int hour) {
         super.ceremony(hour);
@@ -31,4 +26,12 @@ public class Mage extends Psychic{
         int Hp = AbsoluteHero.r.nextInt(10, 20);
         target.healed(Hp);
     }
+
+    @Override
+    public String getInfo() {
+        return "Mage";
+    }
+
+    @Override
+    public void step(){}
 }

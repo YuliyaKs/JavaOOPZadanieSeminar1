@@ -1,7 +1,7 @@
 // Класс Базовый Герой
 import java.util.Random;
 
-public abstract class AbsoluteHero {
+public abstract class AbsoluteHero implements AppInterface{
 
     protected static int number;
     protected static Random r;
@@ -30,11 +30,6 @@ public abstract class AbsoluteHero {
         AbsoluteHero.r.nextInt(100, 200), 
         AbsoluteHero.r.nextInt(500, 1000), 
         AbsoluteHero.r.nextInt(0, 50));
-    }
-
-    public String getInfo() {
-        return String.format("Name: %s  Hp: %d  Money: %d  Hunger: %d  Type: %s", 
-            this.name, this.hp, this.money, this.hunger, this.getClass().getSimpleName());
     }
 
     // Метод питание

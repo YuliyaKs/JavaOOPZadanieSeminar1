@@ -12,11 +12,6 @@ public class Bandit extends Soldier{
         this.blade = Bandit.r.nextInt(0, 100);
     }
 
-    public String getInfo() {
-        return String.format("%s  Speed: %d  Blade: %d", 
-            super.getInfo(), super.speed, this.blade);
-    }
-
     // Метод ограбление
     public void takeMoney(int hour, AbsoluteHero target) {
         super.money += hour * 100;
@@ -26,4 +21,12 @@ public class Bandit extends Soldier{
         this.blade -= hour * 5;
         target.moneyOff(hour*100);
     }
+
+    @Override
+    public String getInfo() {
+        return "Bandit";
+    }
+
+    @Override
+    public void step(){}
 }
